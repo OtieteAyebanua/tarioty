@@ -1,0 +1,23 @@
+[33mcommit 405520cbe101b4d5472e49e2ae2fef8dfb61191e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/work-page[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: dtech-101 <dtechdtech36@gmail.com>
+Date:   Tue Jun 18 21:40:40 2024 -0700
+
+    updated but not complete
+
+[33mcommit 1a0db5b5480e4c2cdb95c9e4b3481a61ce416095[m
+Author: dtech-101 <dtechdtech36@gmail.com>
+Date:   Tue Jun 18 17:53:23 2024 -0700
+
+    update for homePage(not completed)
+
+[33mcommit 1b7c5dd669fb8709e3dd3a48f775f97cd990c5e5[m
+Author: dtech-101 <dtechdtech36@gmail.com>
+Date:   Mon Jun 17 09:15:41 2024 -0700
+
+    setting up work space
+
+[33mcommit f13c543fba1f3e63a1bea43ee986fcb7a9f2f7c1[m
+Author: dtech-101 <dtechdtech36@gmail.com>
+Date:   Mon Jun 17 07:55:10 2024 -0700
+
+    Initialize project using Create React App
