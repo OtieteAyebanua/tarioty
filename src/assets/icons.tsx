@@ -109,7 +109,7 @@ export const GridLines = () => {
 export const TariotyIcon = () => {
   return (
     <svg
-      width="137"
+      width="90"
       height="48"
       viewBox="0 0 137 48"
       fill="none"
