@@ -8,7 +8,7 @@ export const LetConnectContainer = styled.div`
     color: #878787;
     text-align: center;
     padding-top: 3%;
-    padding-bottom: 3%;
+    padding-bottom: 1%;
     cursor: pointer;
   }
 `;

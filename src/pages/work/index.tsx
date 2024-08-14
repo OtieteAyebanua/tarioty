@@ -16,25 +16,25 @@ const tapes = [
 const letters = ["W", "O", "R", "K", "S"];
 const featuredWorks = [
   {
-    img: Lion,
+    img: "https://media4.giphy.com/media/ixvKqzJFAg2DC/200.webp?cid=790b7611wu273jre38hg6caymovcgksxku3udgzjkipigtve&ep=v1_gifs_search&rid=200.webp&ct=g",
     name: "Hunt",
     type: "Website Design",
     year: "2021",
   },
   {
-    img: Lion,
+    img: "https://media4.giphy.com/media/ixvKqzJFAg2DC/200.webp?cid=790b7611wu273jre38hg6caymovcgksxku3udgzjkipigtve&ep=v1_gifs_search&rid=200.webp&ct=g",
     name: "Hunt",
     type: "Website Design",
     year: "2021",
   },
   {
-    img: Lion,
+    img: "https://media4.giphy.com/media/ixvKqzJFAg2DC/200.webp?cid=790b7611wu273jre38hg6caymovcgksxku3udgzjkipigtve&ep=v1_gifs_search&rid=200.webp&ct=g",
     name: "Hunt",
     type: "Website Design",
     year: "2021",
   },
   {
-    img: Lion,
+    img: "https://media4.giphy.com/media/ixvKqzJFAg2DC/200.webp?cid=790b7611wu273jre38hg6caymovcgksxku3udgzjkipigtve&ep=v1_gifs_search&rid=200.webp&ct=g",
     name: "Hunt",
     type: "Website Design",
     year: "2021",
@@ -59,7 +59,7 @@ const Work = () => {
           textTwoColor="#F9BF37"
         />
         <FeaturedWorks data={featuredWorks} />
-        <LetsConnect/>
+        <LetsConnect />
       </DisplayCard>
     </Layout>
   );

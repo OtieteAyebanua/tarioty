@@ -26,7 +26,7 @@ const tapes = [
   "2D DESIGN",
 ];
 
-const letters = ["D", "E", "S", "I", "G", "N", "E", "R"];
+const letters = ["C", "O", "N", "S", "U", "L", "T", "A", "N", "T"];
 const services = [
   "2D/3D DESIGN",
   "WEBSITE DESIGN",
@@ -73,7 +73,7 @@ const Home = () => {
     <Layout>
       <DisplayCard backgroundColor={"#0A0A0A"} paddingTop="2%">
         <TickerTape tapes={tapes} />
-        <Heading letters={letters} nonAnimatedText="DIGITAL" />
+        <Heading letters={letters} nonAnimatedText="ANIMATION" />
         <HBContainer>
           <HeroImgContainer>
             <img src={Hero} alt="hero" />

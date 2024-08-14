@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { routes, socialMediaLinks } from "./routes";
-import { IsMenu, NavbarContainer, Navlist } from "./style";
+import { GridLinesStyle, IsMenu, NavbarContainer, Navlist } from "./style";
 import { DisplayCard } from "../../components/displayCard";
-import { BurgerMenuIcon, TariotyIcon } from "../../assets/icons";
+import { BurgerMenuIcon, GridLines, TariotyIcon } from "../../assets/icons";
 import { useState } from "react";
 import { Typography } from "@mui/material";
 import { X } from "phosphor-react";
@@ -53,6 +53,9 @@ const Navbar = () => {
           {isMenu ? (
             <DisplayCard>
               <IsMenu>
+                <GridLinesStyle>
+                  <GridLines />
+                </GridLinesStyle>
                 <X
                   size={32}
                   color="#EDEDED"
@@ -63,7 +66,7 @@ const Navbar = () => {
                 />
                 <div>
                   {routes.map((item) => (
-                    <Link to={item.link}className="link">
+                    <Link to={item.link} className="link">
                       <Typography className="mobileLink">
                         {item.page}
                       </Typography>

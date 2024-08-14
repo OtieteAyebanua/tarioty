@@ -88,13 +88,21 @@ export const IsMenu = styled.div`
     padding-bottom: 5px;
     padding-left: 10px;
   }
-    .close{
+  .close {
     position: relative;
     right: 11%;
     left: 89%;
     margin-top: 10px;
-    }
-    .link{
+  }
+  .link {
     text-decoration: none;
-    }
+    position: relative;
+    z-index: 10;
+  }
+`;
+export const GridLinesStyle = styled.div`
+border: solid red;
+position: absolute;
+top: -100px;
+left: -30px;
 `;

@@ -7,7 +7,6 @@ const LetsConnect = () => {
     <LetConnectContainer>
       <p>GOT A PROJECT IN MIND?</p>
       <Heading nonAnimatedText="LET’S" letters={animatedText} />
-      <p>[ GET IN TOUCH ]</p>
     </LetConnectContainer>
   );
 };

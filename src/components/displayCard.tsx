@@ -2,8 +2,8 @@ import { Box, Container } from "@mui/material";
 
 interface IDisplayCard {
   children: React.ReactNode;
-  backgroundColor?: string | null;
-  backgroundImg?: any;
+  backgroundColor?: string;
+  backgroundImg?: string;
   position?: "absolute" | "relative" | "static" | "fixed";
   border?: string;
   padding?: string;
@@ -12,7 +12,7 @@ interface IDisplayCard {
   paddingBottom?: string;
   marginBottom?: string;
   bottom?: string;
-  margin? : string;
+  margin?: string;
 }
 export const DisplayCard = ({
   children,
@@ -29,25 +29,25 @@ export const DisplayCard = ({
   margin,
 }: IDisplayCard) => {
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         width: "100%",
         backgroundColor: backgroundColor,
-        backgroundImage: `url(${backgroundImg})`,
+        backgroundImage: `url(${backgroundImg})` as string,
         backgroundSize: "cover",
         position: position,
         border: border,
-        p: padding,
-        pt: paddingTop,
-        pl: paddingLeft,
-        pb: paddingBottom,
-        mb: marginBottom,
+        padding: padding,
+        paddingTop: paddingTop,
+        paddingLeft: paddingLeft,
+        paddingBottom: paddingBottom,
+        marginBottom: marginBottom,
         overflowX: "hidden",
         bottom: bottom,
         margin: margin,
       }}
     >
       <Container maxWidth="xl">{children}</Container>
-    </Box>
+    </div>
   );
 };

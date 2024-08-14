@@ -1,3 +1,4 @@
+import { Gltf, useGLTF } from "@react-three/drei";
 import Layout from "../../layout";
 import { DisplayCard } from "../../components/displayCard";
 import Heading from "../../components/shared/heading";
@@ -13,6 +14,8 @@ import {
 } from "@mui/material";
 import { HowIWorkContainer, ThreeJSContainer } from "./style";
 import React, { useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 const tapes = ["WHAT I OFFER", "MY SERVICES", "WHAT I OFFER", "MY SERVICES"];
 const letters = ["S", "E", "R", "V", "I", "C", "E"];
 
@@ -48,6 +51,7 @@ const howIWork = [
 ];
 
 const Services = () => {
+  const model = useGLTF(process.env.PUBLIC_URL + "/bulb.glb");
   const [expanded, setExpanded] = React.useState<string | false>(false);
   const [border, setBorder] = useState("");
   const handleChange =
@@ -74,7 +78,34 @@ const Services = () => {
           textTwoColor="#F9BF37"
         />
         <HowIWorkContainer>
-          <ThreeJSContainer></ThreeJSContainer>
+          <ThreeJSContainer>
+            <Canvas>
+              <spotLight
+                position={[0, -2, 0]}
+                intensity={200}
+                castShadow
+                color={"yellow"}
+              />
+              <spotLight
+                position={[4, 0, 0]}
+                intensity={100}
+                castShadow
+                color={"yellow"}
+              />
+              <spotLight
+                position={[0, -2, 0]}
+                intensity={200}
+                castShadow
+                color={"yellow"}
+              />
+              <ambientLight intensity={10}/>
+
+              <mesh scale={50} position={[0, -2, 0]}>
+                <primitive object={model.scene} />
+              </mesh>
+              <OrbitControls />
+            </Canvas>
+          </ThreeJSContainer>
           <div className="container2">
             {howIWork.map((item) => (
               <div id="fDiv">
@@ -86,7 +117,7 @@ const Services = () => {
                   }}
                 ></div>
                 <Accordion
-                  sx={{ borderRadius: "16px"}}
+                  sx={{ borderRadius: "16px" }}
                   expanded={expanded === item.isOpen}
                   onChange={handleChange(item.isOpen)}
                 >

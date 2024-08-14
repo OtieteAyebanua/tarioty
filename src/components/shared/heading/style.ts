@@ -6,6 +6,7 @@ export const HeadingContainer = styled.div`
   margin: auto;
   justify-content: center;
   gap: clamp(10px, 5vw, 70px);
+  width: 100%;
   .box {
     display: flex;
     height: 170px;
@@ -20,20 +21,20 @@ export const HeadingContainer = styled.div`
   }
 `;
 export const HeadingText = styled.text`
-  font-size: clamp(50px, 12vw, 150px);
+  font-size: clamp(50px, 10vw, 150px);
   font-weight: 400;
   line-height: 180px;
   color: #f7f7f7;
   font-family: Fjalla One;
   transition: 0.5s;
   @media (max-width: 899px) {
-    font-size: clamp(30px, 26vw, 90px);
+    font-size: clamp(30px, 20vw, 90px);
     text-align: center;
     line-height: 100px;
   }
 `;
 export const AnimatedHeadingText = styled.text`
-  font-size: clamp(50px, 12vw, 150px);
+  font-size: clamp(50px, 10vw, 150px);
   font-weight: 400;
   line-height: 180px;
   color: #454545;
@@ -42,7 +43,7 @@ export const AnimatedHeadingText = styled.text`
   z-index: 2;
   cursor: pointer;
   @media (max-width: 899px) {
-    font-size: clamp(30px, 26vw, 90px);
+    font-size: clamp(30px, 20vw, 90px);
     line-height: 130px;
   }
 `;
@@ -73,5 +74,24 @@ export const AnimatedBox = styled.div`
   }
   @media (max-width: 899px) {
     height: 149px;
+  }
+  @media (max-width: 768px) {
+    #mainText {
+      display: none;
+    }
+    #shadowText {
+      display: inline-block;
+      animation: wave 1s ease-in-out infinite;
+      animation-delay: calc(0.1s * var(--i));
+    }
+    @keyframes wave {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
   }
 `;

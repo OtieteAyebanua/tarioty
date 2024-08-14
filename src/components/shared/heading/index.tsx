@@ -26,12 +26,22 @@ const Heading = ({
     >
       <HeadingText>{nonAnimatedText}</HeadingText>
       <div className="box">
-        {letters.map((item) => (
-          <AnimatedBox>
-            <AnimatedHeadingText id="mainText">{item}</AnimatedHeadingText>
-            <AnimatedHeadingText id="shadowText">{item}</AnimatedHeadingText>
-          </AnimatedBox>
-        ))}
+        {letters.map((word, wordIndex) =>
+          word.split("").map((letter, letterIndex) => (
+            <AnimatedBox>
+              <AnimatedHeadingText id="mainText">{letter}</AnimatedHeadingText>
+              <AnimatedHeadingText
+                id="shadowText"
+                key={`${wordIndex}-${letterIndex}`}
+                style={
+                  { "--i": wordIndex + letterIndex } as React.CSSProperties
+                }
+              >
+                {letter}
+              </AnimatedHeadingText>
+            </AnimatedBox>
+          ))
+        )}
       </div>
     </HeadingContainer>
   );
