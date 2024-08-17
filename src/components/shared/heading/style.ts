@@ -21,20 +21,20 @@ export const HeadingContainer = styled.div`
   }
 `;
 export const HeadingText = styled.text`
-  font-size: clamp(50px, 10vw, 150px);
+  font-size: clamp(50px, 9vw, 150px);
   font-weight: 400;
   line-height: 180px;
   color: #f7f7f7;
   font-family: Fjalla One;
   transition: 0.5s;
   @media (max-width: 899px) {
-    font-size: clamp(30px, 20vw, 90px);
+    font-size: clamp(30px, 19vw, 90px);
     text-align: center;
     line-height: 100px;
   }
 `;
 export const AnimatedHeadingText = styled.text`
-  font-size: clamp(50px, 10vw, 150px);
+  font-size: clamp(50px, 9vw, 150px);
   font-weight: 400;
   line-height: 180px;
   color: #454545;
@@ -43,7 +43,7 @@ export const AnimatedHeadingText = styled.text`
   z-index: 2;
   cursor: pointer;
   @media (max-width: 899px) {
-    font-size: clamp(30px, 20vw, 90px);
+    font-size: clamp(30px, 19vw, 90px);
     line-height: 130px;
   }
 `;
