@@ -8,6 +8,7 @@ import { DisplayCard } from "../displayCard";
 import { AccordionDetailStyle, AccordionSummaryStyle } from "./style";
 import { CaretRight, Check } from "phosphor-react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -147,12 +148,14 @@ const AboutServicesDropdown = () => {
                   <Typography className="description">
                     {item.description}
                   </Typography>
-                  <button>
-                    <Typography className="start">START A PROJECT</Typography>
-                    <div className="caret">
-                      <CaretRight size={20} color="#000000" />
-                    </div>
-                  </button>
+                  <Link to={"/contact"} style={{ textDecoration: "none" }}>
+                    <button>
+                      <Typography className="start">START A PROJECT</Typography>
+                      <div className="caret">
+                        <CaretRight size={20} color="#000000" />
+                      </div>
+                    </button>
+                  </Link>
                 </div>
 
                 <div className="thirdBox">
