@@ -24,7 +24,7 @@ export const Tapes = styled.div`
   gap: 10px;
   position: relative;
   font-family: Outfit;
-  animation: taperAnimation 6s infinite alternate ease-in-out;
+  animation: taperAnimation 15s infinite alternate ease-in-out;
   p {
     display: flex;
     font-family: Outfit;
@@ -38,7 +38,7 @@ export const Tapes = styled.div`
       transform: translateX(0.5%);
     }
     100% {
-      transform: translateX(-44%);
+      transform: translateX(-245%);
     }
   }
 `;

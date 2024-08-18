@@ -18,19 +18,22 @@ import { LeftCricledArrow, RightCircledArrow } from "../../assets/icons";
 import DownloadResume from "../../components/shared/downloadResume";
 import LetsConnect from "../../components/shared/letsConnect";
 const tapes = [
-  "ANIMATIONS",
-  "3D DESIGN",
-  "AUGMENTED REALITY",
-  "VIRTUAL REALITY",
-  "2D DESIGN",
+  "3D ADVERTS",
+  "3D INTERACTIVE WEBSITES",
+  "GAMES AND CINEMATIC",
+  "ARCHITECTURAL VISUALIZER",
+  "MUSIC VIDEOS",
+  "PRODUCT AND EXPLAINER VIDEOS",
 ];
 
 const letters = ["C", "O", "N", "S", "U", "L", "T", "A", "N", "T"];
 const services = [
-  "2D/3D DESIGN",
-  "WEBSITE DESIGN",
-  "ANIMATIONS",
-  "AR/VR TECHNOLOGY",
+  "3D ADVERTS",
+  "3D INTERACTIVE WEBSITES",
+  "GAMES AND CINEMATIC",
+  "ARCHITECTURAL VISUALIZER",
+  "MUSIC VIDEOS",
+  "PRODUCT AND EXPLAINER VIDEOS",
 ];
 const featuredWorks = [
   {
