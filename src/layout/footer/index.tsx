@@ -23,7 +23,7 @@ const Footer = () => {
           })}
         </Navlist>
         <div id="img">
-          <Link to={"*"}>
+          <Link to={"/"}>
             <TariotyIcon />
           </Link>
         </div>
