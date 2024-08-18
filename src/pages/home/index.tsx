@@ -17,24 +17,17 @@ import { Link } from "react-router-dom";
 import { LeftCricledArrow, RightCircledArrow } from "../../assets/icons";
 import DownloadResume from "../../components/shared/downloadResume";
 import LetsConnect from "../../components/shared/letsConnect";
+import { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 const tapes = [
-  "3D ADVERTS",
-  "3D INTERACTIVE WEBSITES",
-  "GAMES AND CINEMATIC",
-  "ARCHITECTURAL VISUALIZER",
-  "MUSIC VIDEOS",
-  "PRODUCT AND EXPLAINER VIDEOS",
+  "PLACE YOUR ADVERT HERE",
+  "PLACE YOUR ADVERT HERE",
+  "PLACE YOUR ADVERT HERE",
+  "PLACE YOUR ADVERT HERE",
 ];
 
 const letters = ["C", "O", "N", "S", "U", "L", "T", "A", "N", "T"];
-const services = [
-  "3D ADVERTS",
-  "3D INTERACTIVE WEBSITES",
-  "GAMES AND CINEMATIC",
-  "ARCHITECTURAL VISUALIZER",
-  "MUSIC VIDEOS",
-  "PRODUCT AND EXPLAINER VIDEOS",
-];
 const featuredWorks = [
   {
     img: "https://media4.giphy.com/media/ixvKqzJFAg2DC/200.webp?cid=790b7611wu273jre38hg6caymovcgksxku3udgzjkipigtve&ep=v1_gifs_search&rid=200.webp&ct=g",
@@ -76,27 +69,16 @@ const Home = () => {
       <DisplayCard backgroundColor={"#0A0A0A"} paddingTop="2%">
         <TickerTape tapes={tapes} />
         <Heading letters={letters} nonAnimatedText="ANIMATION" />
-        <HBContainer>
-          <HeroImgContainer>
-            <img src={Hero} alt="hero" />
-          </HeroImgContainer>
-          <BesideHeroImg>
-            <p id="word1">Hello Hello ✌️</p>
-            <p id="word2">
-              I'm Otietie Tari0ty, Digital Designer transforming concepts into
-              digital masterpieces.
-            </p>
-          </BesideHeroImg>
-        </HBContainer>
       </DisplayCard>
-      <DisplayCard backgroundColor={"#212121"}>
-        <NameBar
-          textOne="MY"
-          textTwo="SERVICES"
-          textOneColor="#F7F7F7"
-          textTwoColor="#F9BF37"
-        />
-        <MyServiceTabs services={services} />
+      <DisplayCard>
+        <Canvas style={{height:'500px',width:'50%',margin:'auto'}}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} />
+          <OrbitControls />
+          <RotatingCube position={[-3, 0, 0]} />
+          <RotatingCube position={[0, 0, 0]} />
+          <RotatingCube position={[3, 0, 0]} />
+        </Canvas>
       </DisplayCard>
       <DisplayCard backgroundColor={"#0A0A0A"}>
         <NameBar
@@ -147,3 +129,27 @@ const Home = () => {
   );
 };
 export default Home;
+
+const RotatingCube = ({ position, color }: any) => {
+  const meshRef = useRef<any>();
+  const [hovered, setHovered] = useState(false);
+
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.01;
+    }
+  });
+
+  return (
+    <mesh
+      ref={meshRef}
+      position={position}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+      scale={hovered ? 1.5 : 1}
+    >
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={color} />
+    </mesh>
+  );
+};

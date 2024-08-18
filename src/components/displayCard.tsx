@@ -13,6 +13,7 @@ interface IDisplayCard {
   marginBottom?: string;
   bottom?: string;
   margin?: string;
+  height?: string;
 }
 export const DisplayCard = ({
   children,
@@ -27,6 +28,7 @@ export const DisplayCard = ({
   marginBottom,
   bottom,
   margin,
+  height,
 }: IDisplayCard) => {
   return (
     <div
@@ -45,6 +47,7 @@ export const DisplayCard = ({
         overflowX: "hidden",
         bottom: bottom,
         margin: margin,
+        height: height,
       }}
     >
       <Container maxWidth="xl">{children}</Container>
