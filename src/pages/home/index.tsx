@@ -75,9 +75,9 @@ const Home = () => {
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
           <OrbitControls enableZoom={false} />
-          <RotatingCube position={[-4, 0, 0]} initialColor="red" />
-          <RotatingCube position={[0, 0, 0]} initialColor="green" />
-          <RotatingCube position={[4, 0, 0]} initialColor="blue" />
+          <RotatingCube position={[-2, 0, 0]} color="red" />
+          <RotatingCube position={[0, 0, 0]} color="green" />
+          <RotatingCube position={[2, 0, 0]} color="blue" />
         </Canvas>
       </DisplayCard>
       <DisplayCard backgroundColor={"#0A0A0A"}>
@@ -130,16 +130,25 @@ const Home = () => {
 };
 export default Home;
 
-const RotatingCube = ({ position, initialColor }: any) => {
+const RotatingCube = ({ position, color }: any) => {
   const meshRef = useRef<any>();
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
-  const [color, setColor] = useState(initialColor);
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.01;
+      meshRef.current.rotation.x = rotation.x;
+      meshRef.current.rotation.y = rotation.y;
     }
   });
+
+  const handleClick = () => {
+    // Increment the rotation by 90 degrees (π/2 radians) on each axis
+    setRotation((prevRotation) => ({
+      x: prevRotation.x + Math.PI / 2,
+      y: prevRotation.y + Math.PI / 2,
+    }));
+  };
 
   return (
     <mesh
@@ -147,10 +156,10 @@ const RotatingCube = ({ position, initialColor }: any) => {
       position={position}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
-      onClick={() => setColor(color === "white" ? "yellow" : "white")} // Toggle color on click
+      onClick={handleClick}
       scale={hovered ? 1.5 : 1}
     >
-      <boxGeometry args={[1.5, 1.5, 1.5]} />
+      <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={color} />
     </mesh>
   );
