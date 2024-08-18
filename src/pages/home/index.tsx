@@ -71,13 +71,13 @@ const Home = () => {
         <Heading letters={letters} nonAnimatedText="ANIMATION" />
       </DisplayCard>
       <DisplayCard>
-        <Canvas style={{height:'500px',width:'50%',margin:'auto'}}>
+        <Canvas style={{ height: "500px", width: "100%", margin: "auto" }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <OrbitControls />
-          <RotatingCube position={[-3, 0, 0]} />
-          <RotatingCube position={[0, 0, 0]} />
-          <RotatingCube position={[3, 0, 0]} />
+          <OrbitControls enableZoom={false} />
+          <RotatingCube position={[-4, 0, 0]} initialColor="red" />
+          <RotatingCube position={[0, 0, 0]} initialColor="green" />
+          <RotatingCube position={[4, 0, 0]} initialColor="blue" />
         </Canvas>
       </DisplayCard>
       <DisplayCard backgroundColor={"#0A0A0A"}>
@@ -130,9 +130,10 @@ const Home = () => {
 };
 export default Home;
 
-const RotatingCube = ({ position, color }: any) => {
+const RotatingCube = ({ position, initialColor }: any) => {
   const meshRef = useRef<any>();
   const [hovered, setHovered] = useState(false);
+  const [color, setColor] = useState(initialColor);
 
   useFrame(() => {
     if (meshRef.current) {
@@ -146,9 +147,10 @@ const RotatingCube = ({ position, color }: any) => {
       position={position}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
+      onClick={() => setColor(color === "white" ? "yellow" : "white")} // Toggle color on click
       scale={hovered ? 1.5 : 1}
     >
-      <boxGeometry args={[1, 1, 1]} />
+      <boxGeometry args={[1.5, 1.5, 1.5]} />
       <meshStandardMaterial color={color} />
     </mesh>
   );
