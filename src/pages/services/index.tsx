@@ -78,7 +78,7 @@ const Services = () => {
           textTwoColor="#F9BF37"
         />
         <HowIWorkContainer>
-          <ThreeJSContainer>
+          {/* <ThreeJSContainer>
             <Canvas>
               <spotLight
                 position={[0, -2, 0]}
@@ -106,7 +106,7 @@ const Services = () => {
               </Suspense>
               <OrbitControls />
             </Canvas>
-          </ThreeJSContainer>
+          </ThreeJSContainer> */}
           <div className="container2">
             {howIWork.map((item) => (
               <div id="fDiv">
