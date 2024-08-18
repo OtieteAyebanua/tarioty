@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DisplayCard } from "../../components/displayCard";
 import Layout from "../../layout";
 import Heading from "../../components/shared/heading";
-import Hero from "../../assets/hero.png";
+import Hero from "../../assets/hero.jpeg";
 import Ex from "../../assets/Ex.png";
 import {
   HBContainer,

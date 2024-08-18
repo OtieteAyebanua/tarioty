@@ -27,17 +27,17 @@ const Footer = () => {
             <TariotyIcon />
           </Link>
         </div>
-        <div className="social">
+        <Navlist>
           {socialMediaLinks.map((item) => (
             <Link id="navShadowlink" to={item.link}>
-              <div className="navNames">
-                <p id="navName">{item.name}</p>
+              <div className="imgNav">
+              <img src={item.name} width={20} id="navImg"/>
                 <div id="line"></div>
-                <div id="navNameShadow">{item.name}</div>
+                <div id="imgShadow">{item.shadow}</div>
               </div>
             </Link>
           ))}
-        </div>
+        </Navlist>
       </FooterContainer>
     </DisplayCard>
   );

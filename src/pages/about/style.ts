@@ -7,7 +7,7 @@ export const HeroImgContainer = styled.div`
   height: 500px;
   img {
     position: absolute;
-    bottom: 0%;
+    bottom: 31%;
     width: clamp(300px, 50vw, 400px);
     @media (max-width: 899px) {
       position: static;
@@ -29,7 +29,7 @@ display: flex;
 font-family: Outfit;
 color: #bababa;
 justify-content: center;
-margin: 50px auto;
+margin: 0px auto;
 #word {
 font-size: clamp(16px, 1.5vw, 20px);
 text-align: center;

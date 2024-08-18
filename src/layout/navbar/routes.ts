@@ -1,3 +1,7 @@
+import Instagram from "../../assets/svgs/instagram.svg";
+import Linkedin from "../../assets/svgs/linkedin.svg";
+import X from "../../assets/svgs/x.svg";
+
 export const routes = [
   {
     page: "ABOUT",
@@ -19,15 +23,18 @@ export const routes = [
 
 export const socialMediaLinks = [
   {
-    name: "INSTAGRAM",
+    name: Instagram,
+    shadow: "INSTAGRAM",
     link: "",
   },
   {
-    name: "TWITTER",
+    name: X,
+    shadow: "TWITTER",
     link: "",
   },
   {
-    name: "LINKEDIN",
+    name: Linkedin,
+    shadow: "LINKEDIN",
     link: "",
   },
 ];

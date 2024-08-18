@@ -70,6 +70,30 @@ export const Navlist = styled.div`
       display: none;
     }
   }
+  .imgNav {
+    height: 25px;
+    overflow: hidden;
+  }
+  #navImg {
+    transition: 1s;
+    position: relative;
+    bottom: 0%;
+  }
+  #imgShadow {
+    transition: 1s;
+    position: relative;
+    bottom: 125%;
+    color: #70666c;
+    bottom: 0%;
+  }
+  .imgNav:hover {
+    #navImg {
+      bottom: 100%;
+    }
+    #imgShadow {
+      bottom: 100%;
+    }
+  }
 `;
 
 export const IsMenu = styled.div`
@@ -101,8 +125,8 @@ export const IsMenu = styled.div`
   }
 `;
 export const GridLinesStyle = styled.div`
-border: solid red;
-position: absolute;
-top: -100px;
-left: -30px;
+  border: solid red;
+  position: absolute;
+  top: -100px;
+  left: -30px;
 `;

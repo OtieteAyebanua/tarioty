@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { HowIWorkContainer, ThreeJSContainer } from "./style";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 const tapes = ["WHAT I OFFER", "MY SERVICES", "WHAT I OFFER", "MY SERVICES"];
@@ -98,11 +98,12 @@ const Services = () => {
                 castShadow
                 color={"yellow"}
               />
-              <ambientLight intensity={10}/>
-
-              <mesh scale={50} position={[0, -2, 0]}>
-                <primitive object={model.scene} />
-              </mesh>
+              <ambientLight intensity={10} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <mesh scale={50} position={[0, -2, 0]}>
+                  <primitive object={model.scene} />
+                </mesh>
+              </Suspense>
               <OrbitControls />
             </Canvas>
           </ThreeJSContainer>

@@ -2,7 +2,7 @@ import { DisplayCard } from "../../components/displayCard";
 import Heading from "../../components/shared/heading";
 import TickerTape from "../../components/shared/tickerTape";
 import Layout from "../../layout";
-import Hero from "../../assets/hero.png";
+import Hero from "../../assets/hero.jpeg";
 import {
   BesideHeroImg,
   HBContainer,
@@ -11,7 +11,6 @@ import {
 } from "./style";
 import MyServiceTabs from "../../components/shared/myServices";
 import FeaturedWorks from "../../components/shared/featuredWorks";
-import Lion from "../../assets/px.jpg";
 import NameBar from "../../components/shared/nameBar";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";

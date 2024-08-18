@@ -7,7 +7,7 @@ export const HeroImgContainer = styled.div`
   height: 500px;
   img {
     position: absolute;
-    bottom: 0%;
+    bottom: 31%;
     width: clamp(300px, 50vw, 400px);
     @media (max-width: 899px) {
       position: static;
@@ -24,13 +24,13 @@ export const BesideHeroImg = styled.div`
   width: 33%;
   position: absolute;
   right: -4%;
+
   @media (min-width: 900px) {
     right: -10%;
   }
   @media (min-width: 1341px) {
     right: 0%;
   }
-  bottom: 5%;
   @media (max-width: 899px) {
     position: relative;
     width: 50%;
@@ -49,6 +49,9 @@ export const BesideHeroImg = styled.div`
 `;
 export const HBContainer = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media (max-width: 899px) {
     display: flex;
     flex-direction: column;
