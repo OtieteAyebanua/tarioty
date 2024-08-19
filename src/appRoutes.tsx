@@ -3,7 +3,6 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Services from "./pages/services";
-import Work from "./pages/work";
 const AppRoutes = () => {
   return (
     <Router>
@@ -12,7 +11,6 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/work" element={<Work />} />
       </Routes>
     </Router>
   );

@@ -42,12 +42,6 @@ const accomplishment = [
     text: "UNHAPPY CLIENTS",
   },
 ];
-const services = [
-  "2D/3D DESIGN",
-  "WEBSITE DESIGN",
-  "ANIMATIONS",
-  "AR/VR TECHNOLOGY",
-];
 const experience = [
   {
     id: "1",
@@ -136,15 +130,6 @@ const About = () => {
             </div>
           ))}
         </AccomplishmentContainer>
-      </DisplayCard>
-      <DisplayCard backgroundColor={"#212121"}>
-        <NameBar
-          textOne="MY"
-          textTwo="SERVICES"
-          textOneColor="#F7F7F7"
-          textTwoColor="#F9BF37"
-        />
-        <MyServiceTabs services={services} />
       </DisplayCard>
       <DisplayCard backgroundColor={"#212121"}>
         <NameBar
