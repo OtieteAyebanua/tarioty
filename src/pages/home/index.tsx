@@ -66,11 +66,12 @@ const testimonial = [
 const Home = () => {
   return (
     <Layout>
-      <DisplayCard backgroundColor={"#0A0A0A"} paddingTop="2%">
+      <DisplayCard
+        backgroundImg="https://img.freepik.com/free-photo/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-products_1258-54552.jpg?t=st=1724025905~exp=1724029505~hmac=8a6baf89f6d3450d8e6905198bc78433da4273af143a853e721ac0d7b88a7a7e&w=1380"
+        paddingTop="2%"
+      >
         <TickerTape tapes={tapes} />
         <Heading letters={letters} nonAnimatedText="ANIMATION" />
-      </DisplayCard>
-      <DisplayCard>
         <Canvas style={{ height: "500px", width: "100%", margin: "auto" }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
@@ -80,7 +81,7 @@ const Home = () => {
           <RotatingCube position={[2, 0, 0]} color="blue" />
         </Canvas>
       </DisplayCard>
-      <DisplayCard backgroundColor={"#0A0A0A"}>
+      <DisplayCard backgroundColor={"#212121"}>
         <NameBar
           textOne="FEATURED"
           textTwo="WORKS"

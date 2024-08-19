@@ -9,7 +9,7 @@ const FeaturedWorks = ({ data }: IFeaturedWorks) => {
   return (
     <FeaturedWorksContainer>
       <Grid container className="grid">
-        {data.map((item: any) => (
+        {data.map((item: any) => ( 
           <Grid item width={"50%"} id="grid">
             <FeaturedWorksBox>
               <div className="blurBox">
