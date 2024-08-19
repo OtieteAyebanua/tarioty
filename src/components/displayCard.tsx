@@ -1,5 +1,4 @@
 import { Box, Container } from "@mui/material";
-
 interface IDisplayCard {
   children: React.ReactNode;
   backgroundColor?: string;
@@ -44,7 +43,6 @@ export const DisplayCard = ({
         paddingLeft: paddingLeft,
         paddingBottom: paddingBottom,
         marginBottom: marginBottom,
-        overflowX: "hidden",
         bottom: bottom,
         margin: margin,
         height: height,

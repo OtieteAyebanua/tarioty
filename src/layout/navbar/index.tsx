@@ -10,7 +10,7 @@ import { X } from "phosphor-react";
 const Navbar = () => {
   const [isMenu, setIsMenu] = useState(false);
   return (
-    <DisplayCard backgroundColor={"#0A0A0A"}>
+    <DisplayCard backgroundImg="https://img.freepik.com/free-photo/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-products_1258-54552.jpg?t=st=1724025905~exp=1724029505~hmac=8a6baf89f6d3450d8e6905198bc78433da4273af143a853e721ac0d7b88a7a7e&w=1380">
       <NavbarContainer>
         <Navlist>
           {routes.map((item) => {

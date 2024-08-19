@@ -10,7 +10,7 @@ function App() {
     setIsLoading(false);
   }, 2000);
   return (
-    <DisplayCard>
+    <div>
       {isLoading ? (
         <div
           style={{
@@ -41,7 +41,7 @@ function App() {
       ) : (
         <AppRoutes />
       )}
-    </DisplayCard>
+    </div>
   );
 }
 
