@@ -5,6 +5,10 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  #img {
+    position: relative;
+    right: 60px;
+  }
   #burgerMenu {
     display: none;
     @media (max-width: 899px) {
@@ -16,6 +20,7 @@ export const NavbarContainer = styled.div`
     padding: 10px;
     #img {
       width: 100%;
+      position: static;
     }
   }
 `;

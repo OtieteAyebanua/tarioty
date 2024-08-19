@@ -2,14 +2,8 @@ import { DisplayCard } from "../../components/displayCard";
 import Heading from "../../components/shared/heading";
 import TickerTape from "../../components/shared/tickerTape";
 import Layout from "../../layout";
-import Hero from "../../assets/hero.jpeg";
 import Bg from "../../assets/tariBg.jpg";
-import {
-  BesideHeroImg,
-  HBContainer,
-  HeroImgContainer,
-  TestimonialContainer,
-} from "./style";
+import { TestimonialContainer } from "./style";
 import MyServiceTabs from "../../components/shared/myServices";
 import FeaturedWorks from "../../components/shared/featuredWorks";
 import NameBar from "../../components/shared/nameBar";
@@ -21,6 +15,8 @@ import LetsConnect from "../../components/shared/letsConnect";
 import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
+
 const tapes = [
   "PLACE YOUR ADVERT HERE",
   "PLACE YOUR ADVERT HERE",
@@ -73,10 +69,10 @@ const Home = () => {
         <Canvas style={{ height: "500px", width: "100%", margin: "auto" }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <OrbitControls enableZoom={false} />
+          <OrbitControls enableDamping={true} enableZoom={false} />
           <RotatingCube position={[-2, 0, 0]} color="red" />
-          <RotatingCube position={[0, 0, 0]} color="green" />
           <RotatingCube position={[2, 0, 0]} color="blue" />
+          <FloatingObject/>
         </Canvas>
       </DisplayCard>
       <DisplayCard backgroundColor={"#212121"}>
@@ -160,6 +156,30 @@ const RotatingCube = ({ position, color }: any) => {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={color} />
+    </mesh>
+  );
+};
+
+const FloatingObject = () => {
+  const { scene } = useGLTF(process.env.PUBLIC_URL + "/gameboy.glb");
+  const meshRef = useRef<any>();
+  let floatingSpeed = 0.8; // Speed of the floating animation
+  let amplitude = 0.5; // Amplitude of the floating animation
+
+  useFrame(({ clock }) => {
+    if (meshRef.current) {
+      const time = clock.getElapsedTime();
+      meshRef.current.position.y = Math.sin(time * floatingSpeed) * amplitude;
+      meshRef.current.rotation.y += 0.005;
+    }
+  });
+ 
+
+  return (
+    <mesh ref={meshRef}>
+      <mesh scale={0.23} position={[0, -2, 0]}>
+        <primitive object={scene} />;
+      </mesh>
     </mesh>
   );
 };

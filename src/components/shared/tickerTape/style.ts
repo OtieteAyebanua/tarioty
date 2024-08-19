@@ -5,8 +5,12 @@ export const TickerTapeContainer = styled.div`
   margin: auto;
   overflow: hidden;
   background: transparent;
+  position: relative;
+  right: 30px;
+  bottom: 17px;
   @media (max-width: 899px) {
     width: clamp(57%, 4vw, 57%);
+    position: static;
     @media (max-width: 768px) {
       width: 57%;
     }
@@ -24,7 +28,7 @@ export const Tapes = styled.div`
   gap: 10px;
   position: relative;
   font-family: Outfit;
-  animation: taperAnimation 5s infinite alternate ease-in-out;
+  animation: taperAnimation 10s infinite alternate ease-in-out;
   p {
     display: flex;
     font-family: Outfit;
