@@ -36,7 +36,7 @@ export const Navlist = styled.div`
       top: -160%;
     }
     #navNameShadow {
-      bottom: 220%;
+      bottom: 185%;
     }
     #line {
       width: 15px;
@@ -60,15 +60,6 @@ export const Navlist = styled.div`
     position: relative;
     bottom: 100%;
   }
-  #line {
-    border: solid #bf922d 1px;
-    position: relative;
-    bottom: 120%;
-    width: -0px;
-    visibility: hidden;
-    transition: 1s;
-    transition-delay: 0.5s;
-  }
   #navShadowlink {
     text-decoration: none;
     @media (max-width: 899px) {
@@ -87,9 +78,8 @@ export const Navlist = styled.div`
   #imgShadow {
     transition: 1s;
     position: relative;
-    bottom: 125%;
     color: #70666c;
-    bottom: 0%;
+    bottom: -10%;
   }
   .imgNav:hover {
     #navImg {

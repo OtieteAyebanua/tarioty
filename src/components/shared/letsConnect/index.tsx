@@ -7,7 +7,7 @@ const LetsConnect = () => {
   return (
     <LetConnectContainer>
       <Link to={"/contact"} style={{textDecoration:'none'}}>
-        <p>GOT A PROJECT IN MIND?</p>
+        <p>TAP TO CONNECT</p>
       </Link>
       <Heading nonAnimatedText="LET’S" letters={animatedText} />
     </LetConnectContainer>

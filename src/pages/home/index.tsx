@@ -84,11 +84,11 @@ const Home = () => {
         />
         <FeaturedWorks data={featuredWorks} />
       </DisplayCard>
-      <DisplayCard backgroundColor={"#EDEDED"}>
+      <DisplayCard backgroundColor={"#0A0A0A"}>
         <NameBar
           textOne="CLIENTS"
           textTwo="TESTIMONIAL"
-          textOneColor="#191718"
+          textOneColor="#F7F7F7"
           textTwoColor="#F9BF37"
         />
         <TestimonialContainer>
@@ -107,7 +107,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="toAndFro">
-                  <LeftCricledArrow /> <RightCircledArrow />
+                  
                 </div>
               </div>
             </div>

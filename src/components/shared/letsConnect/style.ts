@@ -10,5 +10,11 @@ export const LetConnectContainer = styled.div`
     padding-top: 3%;
     padding-bottom: 1%;
     cursor: pointer;
+    transition: 0.5s;
   }
+  p:hover {
+    color: #f9bf37;
+  }
+
+  margin-bottom: 5%;
 `;

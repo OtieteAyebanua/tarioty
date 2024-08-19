@@ -1,15 +1,14 @@
 import Instagram from "../../assets/svgs/instagram.svg";
 import Linkedin from "../../assets/svgs/linkedin.svg";
 import X from "../../assets/svgs/x.svg";
+import ShadowInstagram from "../../assets/svgs/shadowInstagram..svg";
+import ShadowLinkedin from "../../assets/svgs/shadowLinkedin.svg";
+import ShadowX from "../../assets/svgs/shadowX.svg";
 
 export const routes = [
   {
     page: "ABOUT",
     link: "/about",
-  },
-  {
-    page: "WORK",
-    link: "/work",
   },
   {
     page: "SERVICES",
@@ -24,17 +23,17 @@ export const routes = [
 export const socialMediaLinks = [
   {
     name: Instagram,
-    shadow: "INSTAGRAM",
+    shadow: ShadowInstagram,
     link: "",
   },
   {
     name: X,
-    shadow: "TWITTER",
+    shadow: ShadowX,
     link: "",
   },
   {
     name: Linkedin,
-    shadow: "LINKEDIN",
+    shadow: ShadowLinkedin,
     link: "",
   },
 ];

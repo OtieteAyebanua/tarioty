@@ -18,7 +18,6 @@ const Navbar = () => {
               <Link id="navShadowlink" to={item.link}>
                 <div className="navNames">
                   <p id="navName">{item.page}</p>
-                  <div id="line"></div>
                   <div id="navNameShadow">{item.page}</div>{" "}
                 </div>
               </Link>
@@ -34,9 +33,9 @@ const Navbar = () => {
           {socialMediaLinks.map((item) => (
             <Link id="navShadowlink" to={item.link}>
               <div className="imgNav">
-              <img src={item.name} width={20} id="navImg"/>
-                <div id="line"></div>
-                <div id="imgShadow">{item.shadow}</div>
+                <img src={item.name} width={20} id="navImg" />
+                <div></div>
+                <img src={item.shadow} width={20} id="imgShadow" />
               </div>
             </Link>
           ))}
