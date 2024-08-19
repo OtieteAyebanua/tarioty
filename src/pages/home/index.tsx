@@ -7,21 +7,60 @@ import { TestimonialContainer } from "./style";
 import MyServiceTabs from "../../components/shared/myServices";
 import FeaturedWorks from "../../components/shared/featuredWorks";
 import NameBar from "../../components/shared/nameBar";
-import { Avatar } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Avatar,
+  Typography,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { LeftCricledArrow, RightCircledArrow } from "../../assets/icons";
 import DownloadResume from "../../components/shared/downloadResume";
 import LetsConnect from "../../components/shared/letsConnect";
-import { useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
+import AboutServicesDropdown from "../../components/aboutServicesDropdown";
+import { HowIWorkContainer, ThreeJSContainer } from "./style";
 
 const tapes = [
   "PLACE YOUR ADVERT HERE",
   "PLACE YOUR ADVERT HERE",
   "PLACE YOUR ADVERT HERE",
   "PLACE YOUR ADVERT HERE",
+];
+
+const howIWork = [
+  {
+    num: "01",
+    title: "Consultation",
+    isOpen: "panel1",
+    description:
+      "Figma ipsum component variant main layer. Star undo create figjam bold mask. Library connection asset font asset effect create. ",
+  },
+  {
+    num: "01",
+    title: "Consultation",
+    isOpen: "panel2",
+    description:
+      "Figma ipsum component variant main layer. Star undo create figjam bold mask. Library connection asset font asset effect create. ",
+  },
+  {
+    num: "01",
+    title: "Consultation",
+    isOpen: "panel3",
+    description:
+      "Figma ipsum component variant main layer. Star undo create figjam bold mask. Library connection asset font asset effect create. ",
+  },
+  {
+    num: "01",
+    title: "Consultation",
+    isOpen: "panel4",
+    description:
+      "Figma ipsum component variant main layer. Star undo create figjam bold mask. Library connection asset font asset effect create. ",
+  },
 ];
 
 const letters = ["C", "O", "N", "S", "U", "L", "T", "A", "N", "T"];
@@ -61,6 +100,14 @@ const testimonial = [
   },
 ];
 const Home = () => {
+  const model = useGLTF(process.env.PUBLIC_URL + "/bulb.glb");
+  const [expanded, setExpanded] = React.useState<string | false>(false);
+  const [border, setBorder] = useState("");
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+      setBorder(isExpanded ? panel : "");
+    };
   return (
     <Layout>
       <DisplayCard backgroundImg={Bg} paddingTop="2%">
@@ -72,7 +119,7 @@ const Home = () => {
           <OrbitControls enableDamping={true} enableZoom={false} />
           <RotatingCube position={[-2, 0, 0]} color="red" />
           <RotatingCube position={[2, 0, 0]} color="blue" />
-          <FloatingObject/>
+          <FloatingObject />
         </Canvas>
       </DisplayCard>
       <DisplayCard backgroundColor={"#212121"}>
@@ -83,6 +130,80 @@ const Home = () => {
           textTwoColor="#F9BF37"
         />
         <FeaturedWorks data={featuredWorks} />
+      </DisplayCard>
+      <DisplayCard backgroundColor="#000000">
+        <AboutServicesDropdown />
+      </DisplayCard>
+      <DisplayCard backgroundColor={"#000000"}>
+        <NameBar
+          textOne="HOW"
+          textTwo="WORK"
+          textOneColor="#F7F7F7"
+          textTwoColor="#F9BF37"
+        />
+        <HowIWorkContainer>
+          <ThreeJSContainer>
+            <Canvas>
+              <spotLight
+                position={[0, -2, 0]}
+                intensity={200}
+                castShadow
+                color={"yellow"}
+              />
+              <spotLight
+                position={[4, 0, 0]}
+                intensity={100}
+                castShadow
+                color={"yellow"}
+              />
+              <spotLight
+                position={[0, -2, 0]}
+                intensity={200}
+                castShadow
+                color={"yellow"}
+              />
+              <ambientLight intensity={10} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <mesh scale={50} position={[0, -2, 0]}>
+                  <primitive object={model.scene} />
+                </mesh>
+              </Suspense>
+              <OrbitControls />
+            </Canvas>
+          </ThreeJSContainer>
+          <div className="container2">
+            {howIWork.map((item) => (
+              <div id="fDiv">
+                <div
+                  id="div"
+                  style={{
+                    border:
+                      item.isOpen == border ? "solid  1px #ffffff" : "none",
+                  }}
+                ></div>
+                <Accordion
+                  sx={{ borderRadius: "16px" }}
+                  expanded={expanded === item.isOpen}
+                  onChange={handleChange(item.isOpen)}
+                >
+                  <AccordionSummary className="summary">
+                    <div>
+                      <Typography className="num">01</Typography>
+                      <Typography className="name">Consultation</Typography>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails className="detail">
+                    <Typography className="description">
+                      Figma ipsum component variant main layer. Star undo create
+                      figjam bold mask. Library connection asset font asset
+                      effect create.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>{" "}
+              </div>
+            ))}
+          </div>
+        </HowIWorkContainer>
       </DisplayCard>
       <DisplayCard backgroundColor={"#0A0A0A"}>
         <NameBar
@@ -106,9 +227,7 @@ const Home = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="toAndFro">
-                  
-                </div>
+                <div className="toAndFro"></div>
               </div>
             </div>
           ))}
@@ -173,7 +292,6 @@ const FloatingObject = () => {
       meshRef.current.rotation.y += 0.005;
     }
   });
- 
 
   return (
     <mesh ref={meshRef}>
