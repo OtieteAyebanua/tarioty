@@ -24,7 +24,6 @@ const Heading = ({
     <HeadingContainer
       style={{ flexDirection: flexDirection, gap: gap, alignItems: alignItems }}
     >
-      <HeadingText>{nonAnimatedText}</HeadingText>
       <div className="box">
         {letters.map((word, wordIndex) =>
           word.split("").map((letter, letterIndex) => (

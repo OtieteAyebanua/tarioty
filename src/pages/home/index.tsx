@@ -2,7 +2,7 @@ import { DisplayCard } from "../../components/displayCard";
 import Heading from "../../components/shared/heading";
 import TickerTape from "../../components/shared/tickerTape";
 import Layout from "../../layout";
-import Bg from "../../assets/tariBg.jpg";
+import Bg from "../../assets/wallpaperflare.com_wallpaper.jpg";
 import { TestimonialContainer } from "./style";
 import MyServiceTabs from "../../components/shared/myServices";
 import FeaturedWorks from "../../components/shared/featuredWorks";
@@ -24,6 +24,8 @@ import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
 import AboutServicesDropdown from "../../components/aboutServicesDropdown";
 import { HowIWorkContainer, ThreeJSContainer } from "./style";
+import vid1 from "../../assets/vid.mp4";
+import vid2 from "../../assets/vid2.mp4"
 
 const tapes = [
   "PLACE YOUR ADVERT HERE",
@@ -63,7 +65,7 @@ const howIWork = [
   },
 ];
 
-const letters = ["C", "O", "N", "S", "U", "L", "T", "A", "N", "T"];
+const letters = ["T", "A", "R", "I", "O", "T", "Y"];
 const featuredWorks = [
   {
     img: "https://media4.giphy.com/media/ixvKqzJFAg2DC/200.webp?cid=790b7611wu273jre38hg6caymovcgksxku3udgzjkipigtve&ep=v1_gifs_search&rid=200.webp&ct=g",
@@ -110,27 +112,10 @@ const Home = () => {
     };
   return (
     <Layout>
-      <DisplayCard backgroundImg={Bg} paddingTop="2%">
-        <TickerTape tapes={tapes} />
+      <DisplayCard isVideo position="relative" autoplay marginBottom="-3.5px" videoSrc={vid1}>
         <Heading letters={letters} nonAnimatedText="ANIMATION" />
-        <Canvas style={{ height: "500px", width: "100%", margin: "auto" }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <OrbitControls enableDamping={true} enableZoom={false} />
-          <RotatingCube position={[-2, 0, 0]} color="red" />
-          <RotatingCube position={[2, 0, 0]} color="blue" />
-          <FloatingObject />
-        </Canvas>
       </DisplayCard>
-      <DisplayCard backgroundColor={"#212121"}>
-        <NameBar
-          textOne="FEATURED"
-          textTwo="WORKS"
-          textOneColor="#F7F7F7"
-          textTwoColor="#F9BF37"
-        />
-        <FeaturedWorks data={featuredWorks} />
-      </DisplayCard>
+      <DisplayCard isVideo position="relative"  videoSrc={vid2}></DisplayCard>
       <DisplayCard backgroundColor="#000000">
         <AboutServicesDropdown />
       </DisplayCard>

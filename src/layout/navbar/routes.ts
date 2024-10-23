@@ -7,16 +7,20 @@ import ShadowX from "../../assets/svgs/shadowX.svg";
 
 export const routes = [
   {
-    page: "Home",
-    link: "/",
+    page: "Create With Us",
+    link: "/create-with-us",
   },
   {
-    page: "ABOUT",
-    link: "/about",
+    page: "Projects",
+    link: "/projects", 
   },
   {
-    page: "CONTACT",
-    link: "/contact",
+    page: "About Us",
+    link: "/about-us",
+  },
+  {
+    page: "Join Our Team",
+    link: "/join-our-team",
   },
 ];
 

@@ -1,71 +1,33 @@
 import styled from "@emotion/styled";
-
-export const NavbarContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  #img {
-    position: relative;
-    right: 60px;
-  }
-  #burgerMenu {
-    display: none;
-    @media (max-width: 899px) {
-      display: block;
-    }
-  }
-  @media (max-width: 899px) {
-    justify-content: space-between;
-    padding: 10px;
-    #img {
-      width: 100%;
-      position: static;
-    }
-  }
-`;
 export const Navlist = styled.div`
   display: flex;
+  width: 100%;
   gap: 28px;
-  .navNames {
-    height: 22px;
-    overflow: hidden;
-  }
-  .navNames:hover {
-    #navName {
-      top: -160%;
-    }
-    #navNameShadow {
-      bottom: 185%;
-    }
-    #line {
-      width: 15px;
-      visibility: visible;
-    }
-  }
+  justify-content: center;
   #navName {
-    font-size: 14px;
-    font-family: Outfit;
-    line-height: 16px;
-    color: #bababa;
+    font-size: 24px;
+    font-family: Luckiest Guy;
+    color: #ffffff;
     text-decoration: none;
-    transition: 1s;
-    transform: translateY(5px);
-    position: relative;
-    top: -55%;
-  }
-  #navNameShadow {
-    color: #70666c;
-    transition: 1s;
-    position: relative;
-    bottom: 100%;
-  }
-  #navShadowlink {
+    transition: 0.5s;
     text-decoration: none;
-    @media (max-width: 899px) {
-      display: none;
+    animation: float 4s ease-in-out infinite;
+  }
+  #navName:hover {
+    color: #f9bf37;
+  }
+  @keyframes float {
+    0% {
+      transform: translateY(0); /* Starting position */
+    }
+    50% {
+      transform: translateY(-15px); /* Float upwards */
+    }
+    100% {
+      transform: translateY(0); /* Back to start */
     }
   }
+
   .imgNav {
     height: 25px;
     overflow: hidden;
@@ -74,20 +36,6 @@ export const Navlist = styled.div`
     transition: 1s;
     position: relative;
     bottom: 0%;
-  }
-  #imgShadow {
-    transition: 1s;
-    position: relative;
-    color: #70666c;
-    bottom: -10%;
-  }
-  .imgNav:hover {
-    #navImg {
-      bottom: 100%;
-    }
-    #imgShadow {
-      bottom: 100%;
-    }
   }
 `;
 

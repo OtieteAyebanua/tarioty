@@ -6,6 +6,10 @@ export const HeadingContainer = styled.div`
   margin: auto;
   justify-content: center;
   gap: clamp(10px, 5vw, 70px);
+  position: absolute;
+  left: 0;
+  right: 0px;
+  padding-top: 100px;
   width: 100%;
   .box {
     display: flex;
@@ -25,7 +29,7 @@ export const HeadingText = styled.text`
   font-weight: 400;
   line-height: 180px;
   color: #f7f7f7;
-  font-family: Fjalla One;
+  font-family: Luckiest Guy;
   transition: 0.5s;
   @media (max-width: 899px) {
     font-size: clamp(30px, 19vw, 90px);
@@ -34,13 +38,15 @@ export const HeadingText = styled.text`
   }
 `;
 export const AnimatedHeadingText = styled.text`
-  font-size: clamp(50px, 9vw, 150px);
+  font-size: clamp(50px, 6vw, 100px);
   font-weight: 400;
   line-height: 180px;
-  color: #454545;
-  font-family: Fjalla One;
+  color: #ffffff;
+  font-family: Luckiest Guy;
+  letter-spacing: 5px;
   position: relative;
   z-index: 2;
+  width: 100%;
   cursor: pointer;
   @media (max-width: 899px) {
     font-size: clamp(30px, 19vw, 90px);
