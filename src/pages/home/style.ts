@@ -166,3 +166,24 @@ export const HowIWorkContainer = styled.div`
 export const ThreeJSContainer = styled.div`
   width: 100%;
 `;
+
+export const ComicLayoutContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  .leftside {
+    border: solid red;
+    width: 60%;
+    height: auto;
+  }
+  .rightside {
+    border: solid red;
+    width: 40%;
+    height: auto;
+  }
+`;
+export const LeftsideBottom = styled.div`
+  width: 99%;
+  border: solid blue;
+  display: flex;
+  gap: 10px;
+`;

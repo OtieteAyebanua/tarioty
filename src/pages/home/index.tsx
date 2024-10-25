@@ -3,7 +3,11 @@ import Heading from "../../components/shared/heading";
 import TickerTape from "../../components/shared/tickerTape";
 import Layout from "../../layout";
 import Bg from "../../assets/wallpaperflare.com_wallpaper.jpg";
-import { TestimonialContainer } from "./style";
+import {
+  ComicLayoutContainer,
+  LeftsideBottom,
+  TestimonialContainer,
+} from "./style";
 import MyServiceTabs from "../../components/shared/myServices";
 import FeaturedWorks from "../../components/shared/featuredWorks";
 import NameBar from "../../components/shared/nameBar";
@@ -25,7 +29,7 @@ import { useGLTF } from "@react-three/drei";
 import AboutServicesDropdown from "../../components/aboutServicesDropdown";
 import { HowIWorkContainer, ThreeJSContainer } from "./style";
 import vid1 from "../../assets/vid.mp4";
-import vid2 from "../../assets/vid2.mp4"
+import vid2 from "../../assets/vid2.mp4";
 
 const tapes = [
   "PLACE YOUR ADVERT HERE",
@@ -112,118 +116,28 @@ const Home = () => {
     };
   return (
     <Layout>
-      <DisplayCard isVideo position="relative" autoplay marginBottom="-3.5px" videoSrc={vid1}>
+      <DisplayCard
+        isVideo
+        position="relative"
+        autoplay
+        marginBottom="-3.5px"
+        videoSrc={vid1}
+      >
         <Heading letters={letters} nonAnimatedText="ANIMATION" />
       </DisplayCard>
-      <DisplayCard isVideo position="relative"  videoSrc={vid2}></DisplayCard>
-      <DisplayCard backgroundColor="#000000">
-        <AboutServicesDropdown />
-      </DisplayCard>
-      <DisplayCard backgroundColor={"#000000"}>
-        <NameBar
-          textOne="HOW"
-          textTwo="WORK"
-          textOneColor="#F7F7F7"
-          textTwoColor="#F9BF37"
-        />
-        <HowIWorkContainer>
-          <ThreeJSContainer>
-            <Canvas>
-              <spotLight
-                position={[0, -2, 0]}
-                intensity={200}
-                castShadow
-                color={"yellow"}
-              />
-              <spotLight
-                position={[4, 0, 0]}
-                intensity={100}
-                castShadow
-                color={"yellow"}
-              />
-              <spotLight
-                position={[0, -2, 0]}
-                intensity={200}
-                castShadow
-                color={"yellow"}
-              />
-              <ambientLight intensity={10} />
-              <Suspense fallback={<div>Loading...</div>}>
-                <mesh scale={50} position={[0, -2, 0]}>
-                  <primitive object={model.scene} />
-                </mesh>
-              </Suspense>
-              <OrbitControls />
-            </Canvas>
-          </ThreeJSContainer>
-          <div className="container2">
-            {howIWork.map((item) => (
-              <div id="fDiv">
-                <div
-                  id="div"
-                  style={{
-                    border:
-                      item.isOpen == border ? "solid  1px #ffffff" : "none",
-                  }}
-                ></div>
-                <Accordion
-                  sx={{ borderRadius: "16px" }}
-                  expanded={expanded === item.isOpen}
-                  onChange={handleChange(item.isOpen)}
-                >
-                  <AccordionSummary className="summary">
-                    <div>
-                      <Typography className="num">01</Typography>
-                      <Typography className="name">Consultation</Typography>
-                    </div>
-                  </AccordionSummary>
-                  <AccordionDetails className="detail">
-                    <Typography className="description">
-                      Figma ipsum component variant main layer. Star undo create
-                      figjam bold mask. Library connection asset font asset
-                      effect create.
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>{" "}
-              </div>
-            ))}
-          </div>
-        </HowIWorkContainer>
-      </DisplayCard>
-      <DisplayCard backgroundColor={"#0A0A0A"}>
-        <NameBar
-          textOne="CLIENTS"
-          textTwo="TESTIMONIAL"
-          textOneColor="#F7F7F7"
-          textTwoColor="#F9BF37"
-        />
-        <TestimonialContainer>
-          {testimonial.map((item) => (
-            <div>
-              <p id="message">{item.message}</p>
-              <div className="bottomBox">
-                <div className="detailsContainer">
-                  <Avatar id="avatar" />
-                  <div className="details">
-                    <div id="authorName">{item.authorName}</div>
-                    <div id="jobTitle">{item.jobTitle}</div>
-                    <Link to="">
-                      <div id="linkedin">Linkedin</div>
-                    </Link>
-                  </div>
-                </div>
-                <div className="toAndFro"></div>
-              </div>
-            </div>
-          ))}
-        </TestimonialContainer>
-      </DisplayCard>
-      {/* <DisplayCard backgroundColor={"#0A0A0A"}>
-        <DownloadResume />
-      </DisplayCard> */}
-      <DisplayCard backgroundColor={"#0A0A0A"}>
-        <LetsConnect />
-      </DisplayCard>
+
+      <ComicLayoutContainer>
+        <div className="leftside">
+          <DisplayCard isVideo videoSrc={vid1} autoplay></DisplayCard>
+          <LeftsideBottom>
+            <DisplayCard isVideo videoSrc={vid1} autoplay></DisplayCard>{" "}
+            <DisplayCard isVideo videoSrc={vid1} autoplay></DisplayCard>
+          </LeftsideBottom>
+        </div>
+        <div className="rightside">
+          <DisplayCard isVideo videoSrc={vid1} autoplay ></DisplayCard>
+        </div>
+      </ComicLayoutContainer>
     </Layout>
   );
 };
