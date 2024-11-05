@@ -5,8 +5,8 @@ import Layout from "../../layout";
 import Bg from "../../assets/wallpaperflare.com_wallpaper.jpg";
 import {
   ComicLayoutContainer,
-  LeftsideBottom,
   TestimonialContainer,
+  ThreeDObjectContainer,
 } from "./style";
 import MyServiceTabs from "../../components/shared/myServices";
 import FeaturedWorks from "../../components/shared/featuredWorks";
@@ -30,6 +30,7 @@ import AboutServicesDropdown from "../../components/aboutServicesDropdown";
 import { HowIWorkContainer, ThreeJSContainer } from "./style";
 import vid1 from "../../assets/vid.mp4";
 import vid2 from "../../assets/vid2.mp4";
+import { ThreeDimensionalObject } from "../../components/3dObject";
 
 const tapes = [
   "PLACE YOUR ADVERT HERE",
@@ -125,19 +126,9 @@ const Home = () => {
       >
         <Heading letters={letters} nonAnimatedText="ANIMATION" />
       </DisplayCard>
-
-      <ComicLayoutContainer>
-        <div className="leftside">
-          <DisplayCard isVideo videoSrc={vid1} autoplay></DisplayCard>
-          <LeftsideBottom>
-            <DisplayCard isVideo videoSrc={vid1} autoplay></DisplayCard>{" "}
-            <DisplayCard isVideo videoSrc={vid1} autoplay></DisplayCard>
-          </LeftsideBottom>
-        </div>
-        <div className="rightside">
-          <DisplayCard isVideo videoSrc={vid1} autoplay ></DisplayCard>
-        </div>
-      </ComicLayoutContainer>
+      <ThreeDObjectContainer>
+        <ThreeDimensionalObject />
+      </ThreeDObjectContainer>
     </Layout>
   );
 };
@@ -184,18 +175,24 @@ const FloatingObject = () => {
   let floatingSpeed = 0.8; // Speed of the floating animation
   let amplitude = 0.5; // Amplitude of the floating animation
 
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      const time = clock.getElapsedTime();
-      meshRef.current.position.y = Math.sin(time * floatingSpeed) * amplitude;
-      meshRef.current.rotation.y += 0.005;
-    }
-  });
+  // useFrame(({ clock }) => {
+  //   if (meshRef.current) {
+  //     const time = clock.getElapsedTime();
+  //     meshRef.current.position.y = Math.sin(time * floatingSpeed) * amplitude;
+  //     meshRef.current.rotation.y += 0.005;
+  //   }
+  // });
 
   return (
-    <mesh ref={meshRef}>
-      <mesh scale={0.23} position={[0, -2, 0]}>
-        <primitive object={scene} />;
+    <mesh>
+      <mesh ref={meshRef} scale={0.23} position={[0, 0, 0]}>
+        {/* <primitive object={scene} />; */}
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="white" />
+      </mesh>
+      <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+        <planeGeometry args={[10, 10]} />
+        <shadowMaterial opacity={0.2} />
       </mesh>
     </mesh>
   );

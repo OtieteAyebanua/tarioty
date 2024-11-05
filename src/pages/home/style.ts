@@ -181,9 +181,8 @@ export const ComicLayoutContainer = styled.div`
     height: auto;
   }
 `;
-export const LeftsideBottom = styled.div`
-  width: 99%;
-  border: solid blue;
-  display: flex;
-  gap: 10px;
+
+export const ThreeDObjectContainer = styled.div`
+  height: 600px;
+  margin-top: -3.5px;
 `;
