@@ -55,6 +55,7 @@ export const DisplayCard = ({
         margin: margin,
         height: height,
         top: top,
+        WebkitBackgroundSize: "cover"
       }}
     >
       <Container maxWidth="xl"> {children}</Container>

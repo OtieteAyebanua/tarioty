@@ -9,7 +9,7 @@ const Layout = ({ children }: ILayout) => {
     <>
       <Navbar />
       <div> {children}</div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
