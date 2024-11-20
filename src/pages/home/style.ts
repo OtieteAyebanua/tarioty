@@ -1,188 +1,54 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-export const HeroImgContainer = styled.div`
+export const MainContainer = styled.div`
   position: relative;
-  display: flex;
-  justify-content: center;
-  height: 500px;
-  img {
-    position: absolute;
-    bottom: 31%;
-    width: clamp(300px, 50vw, 400px);
-    @media (max-width: 899px) {
-      position: static;
-      width: clamp(100px, 80vw, 400px);
-    }
-  }
-`;
-
-export const BesideHeroImg = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: Outfit;
-  color: #bababa;
-  width: 33%;
-  position: absolute;
-  right: -4%;
-
-  @media (min-width: 900px) {
-    right: -10%;
-  }
-  @media (min-width: 1341px) {
-    right: 0%;
-  }
-  @media (max-width: 899px) {
-    position: relative;
-    width: 50%;
-    right: 0%;
-    margin: auto;
+  top: clamp(100px, 10vw, 600px);
+  width: 99%;
+  margin: auto;
+  .create-with-us {
+    font-family: inter;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: clamp(72px, 4vw, 300px);
+    width: 100%;
     text-align: center;
-  }
-  #word1 {
-    font-size: clamp(10px, 2vw, 28px);
-    font-weight: 500;
-  }
-  #word2 {
-    font-size: clamp(10px, 1.5vw, 20px);
-    font-weight: 400;
-  }
-`;
-export const HBContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 899px) {
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-export const TestimonialContainer = styled.div`
-  div {
-    #message {
-      font-family: Outfit;
-      font-size: clamp(10px, 3.2vw, 48px);
-      font-weight: 600;
-      color: #f7f7f7;
+    line-height: 120%;
+    @media (max-width: 850px) {
+      font-size: clamp(20px, 4vw, 70px);
     }
   }
-  .bottomBox {
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: 899px) {
-      align-items: normal;
-      flex-direction: column;
-      .toAndFro {
-        justify-content: flex-end;
-      }
+  .below-create-with-us {
+    font-weight: 400;
+    font-family: inter;
+    text-align: center;
+    color: #ffffff;
+    font-size: clamp(18px, 1vw, 70px);
+    padding-top: 2.5%;
+    width: 90%;
+    margin: auto;
+    @media (max-width: 850px) {
+      font-size: clamp(5px, 2.1vw, 40px);
     }
   }
-  .detailsContainer {
-    display: flex;
-    align-items: flex-start;
-    gap: clamp(10px, 2vw, 40px);
-    margin-top: 10px;
-    margin-bottom: 10%;
-  }
-  .details {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-  #avatar {
-    width: clamp(20px, 10vw, 100px);
-    height: clamp(20px, 10vw, 100px);
-  }
-  #authorName {
-    font-size: clamp(5px, 3vw, 24px);
-    font-weight: 400;
-    font-family: Outfit;
-    color: #ededed;
-  }
-  #jobTitle {
-    font-size: clamp(5px, 3.5vw, 20px);
-    font-family: Outfit;
-    font-weight: 400;
-    color: #f7f7f7;
-  }
-  #linkedin {
-    font-weight: 400;
-    font-size: clamp(5px, 3vw, 16px);
-    font-family: Outfit;
-    color: #1644e8;
-    text-decoration: underline #1644e8;
+  .get-started-under-create-with-us {
+    position: relative;
+    background: #fbda2e;
+    border-radius: 100px;
     cursor: pointer;
-  }
-  .toAndFro {
-    display: flex;
-    gap: 20px;
-  }
-`;
-export const HowIWorkContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 5%;
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  }
-  .summary {
-    .num {
-      font-size: 16px;
-      font-family: outfit;
-      font-weight: 400;
-      color: #0f0f0f;
-    }
-    .name {
-      font-size: clamp(20px, 3vw, 48px);
-      font-family: outfit;
-      font-weight: 700;
-      color: #000000;
+    border: none;
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: clamp(14px, 1vw, 60px);
+    color: #000000;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    @media (max-width: 850px) {
+      font-size: clamp(10px, 2vw, 50px);
+      padding-top: 1.5%;
+      padding-bottom: 1.5%;
+      margin-top: 2%;
     }
   }
-  .detail {
-    .description {
-      font-size: clamp(5px, 4.5vw, 20px);
-      font-family: outfit;
-      font-weight: 400;
-      color: #0f0f0fcc;
-    }
-  }
-  .container2 {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 10px;
-    #fDiv {
-      display: flex;
-      gap: 10px;
-    }
-    #div {
-      transition: 1s;
-    }
-  }
-`;
-export const ThreeJSContainer = styled.div`
-  width: 100%;
-`;
-
-export const ComicLayoutContainer = styled.div`
-  display: flex;
-  gap: 10px;
-  .leftside {
-    border: solid red;
-    width: 60%;
-    height: auto;
-  }
-  .rightside {
-    border: solid red;
-    width: 40%;
-    height: auto;
-  }
-`;
-
-export const ThreeDObjectContainer = styled.div`
-  height: 600px;
-  margin-top: -3.5px;
 `;

@@ -55,10 +55,10 @@ export const DisplayCard = ({
         margin: margin,
         height: height,
         top: top,
-        WebkitBackgroundSize: "cover"
+        WebkitBackgroundSize: "cover",
       }}
     >
-      <Container maxWidth="xl"> {children}</Container>
+      <div>{children}</div>
       {isVideo ? (
         <video
           muted

@@ -2,30 +2,18 @@ import styled from "@emotion/styled";
 export const Navlist = styled.div`
   display: flex;
   width: 100%;
-  gap: 28px;
+  gap: 3%;
   justify-content: center;
   #navName {
-    font-size: 24px;
-    font-family: Luckiest Guy;
+    font-size: clamp(10px, 1.3vw, 70px);
+    font-famil: inter;
     color: #ffffff;
     text-decoration: none;
     transition: 0.5s;
     text-decoration: none;
-    animation: float 4s ease-in-out infinite;
   }
   #navName:hover {
     color: #f9bf37;
-  }
-  @keyframes float {
-    0% {
-      transform: translateY(0); /* Starting position */
-    }
-    50% {
-      transform: translateY(-15px); /* Float upwards */
-    }
-    100% {
-      transform: translateY(0); /* Back to start */
-    }
   }
 
   .imgNav {
@@ -51,7 +39,7 @@ export const IsMenu = styled.div`
   padding-top: 10px;
   .mobileLink {
     color: #ffffff;
-    font-family: outfit;
+    font-family: inter;
     padding-bottom: 5px;
     padding-left: 10px;
   }

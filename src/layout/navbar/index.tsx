@@ -12,13 +12,11 @@ const Navbar = () => {
   return (
     <div
       style={{
-        paddingTop: "20px",
-        position: "fixed",
+        paddingTop: "1.2%",
+        position: "absolute",
         top: "0",
         width:'100%',
         zIndex: "10",
-        backdropFilter: `blur(10px)`,
-        backgroundColor: "rgba(255, 255, 255, 0.1)",
       }}
     >
       <div style={{ display: "flex", alignItems: "center" }}>
